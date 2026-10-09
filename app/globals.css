@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #f8f9fa;
+    --foreground: #111827;
+    --surface: #ffffff;
+    --surface-card: #ffffff;
+    --surface-border: #e5e7eb;
+    --muted: #6b7280;
+    --accent-plum: #5b2245;
+    --accent-rose: #c0679a;
+    --accent-lavender: #7c3aed;
+  }
+
+  .dark {
+    --background: #101014;
+    --foreground: #f3f4f6;
+    --surface: #191920;
+    --surface-card: #191920;
+    --surface-border: #262633;
+    --muted: #9ca3af;
+    --accent-plum: #5b2245;
+    --accent-rose: #c0679a;
+    --accent-lavender: #a78bfa;
+  }
+
+  * {
+    border-color: var(--surface-border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(16, 16, 20, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: #5b2245;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c0679a;
+}
+
+/* Power BI Grid Accent Backgrounds */
+.analytics-grid-bg {
+  background-image: radial-gradient(rgba(192, 103, 154, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dark .analytics-grid-bg {
+  background-image: radial-gradient(rgba(167, 139, 250, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Smooth glassmorphism */
+.glass-panel {
+  background: rgba(25, 25, 32, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Selection */
+::selection {
+  background-color: #5b2245;
+  color: #ffffff;
+}
